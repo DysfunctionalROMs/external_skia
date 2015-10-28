@@ -608,6 +608,9 @@ LOCAL_STATIC_LIBRARIES := \
 
 ifeq ($(TARGET_HAVE_QC_PERF),true)
 	LOCAL_WHOLE_STATIC_LIBRARIES += libqc-skia
+	LOCAL_SHARED_LIBRARIES += \
+		libqc-opt
+
 endif
 
 
@@ -661,6 +664,8 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := \
 
 LOCAL_MODULE := \
 	libskia
+
+LOCAL_CLANG := false
 
 LOCAL_SRC_FILES_arm += \
 	src/core/SkUtilsArm.cpp \
