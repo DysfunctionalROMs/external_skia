@@ -65,6 +65,13 @@ LOCAL_CFLAGS += \
 	-DSKIA_IMPLEMENTATION=1 \
 	-Wno-clobbered
 
+ifeq ($(STRICT),true)
+# ===============
+# BROKEN_FLAGS
+# ===============
+LOCAL_CFLAGS += $(STRICT_ALIASING_FLAGS)
+endif
+
 LOCAL_CPPFLAGS := \
 	-std=c++11 \
 	-Wno-invalid-offsetof
